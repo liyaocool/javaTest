@@ -7,7 +7,8 @@ import hero.Hero;
 public class Index {
     public static void main(String[] args) {
 //        testHero();
-        testAnimal();
+//        testAnimal();
+        testDuoTai();
     }
 
 
@@ -38,6 +39,15 @@ public class Index {
 //
 //        Bird bird1 = new Bird();//Bird并未写move(),但已继承父类Animal的所有public方法
 //        bird1.move();
+    }
+
+    //测试动物多态
+    private static void testDuoTai() {
+        Animal catAnimal = new Cat(2,"小花");
+        catAnimal.move();
+
+        Animal birdAnimal = new Bird(2, "麻雀");
+        birdAnimal.move();
     }
 
 }

@@ -1,7 +1,4 @@
-package hero;
-
-import hero.attribute.Attribute;
-import hero.skill.Skill;
+package extendsTest.test02;
 
 public class Hero {
     private Attribute attr = new Attribute();

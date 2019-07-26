@@ -1,4 +1,4 @@
-package animal;
+package extendsTest.test01;
 
 public class Animal {
     private int id;

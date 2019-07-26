@@ -1,6 +1,6 @@
-package animal.bird;
+package extendsTest.test01.bird;
 
-import animal.Animal;
+import extendsTest.test01.Animal;
 
 public class Bird extends Animal {
     private int id;

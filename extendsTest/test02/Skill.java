@@ -1,4 +1,4 @@
-package hero.skill;
+package extendsTest.test02;
 
 public class Skill {
     public String name;

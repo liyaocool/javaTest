@@ -1,4 +1,4 @@
-package hero.attribute;
+package extendsTest.test02;
 
 public class Attribute {
     public int id; //英雄id

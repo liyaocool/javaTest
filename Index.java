@@ -2,12 +2,15 @@ import animal.Animal;
 import animal.bird.Bird;
 import animal.cat.Cat;
 import hero.Hero;
+import testInterface.ServiceImpl;
+import testInterface.UserService;
 
 
 public class Index {
     public static void main(String[] args) {
 //        testHero();
-        testAnimal();
+//        testAnimal();
+        myTestInterface();
     }
 
 
@@ -38,6 +41,14 @@ public class Index {
 //
 //        Bird bird1 = new Bird();//Bird并未写move(),但已继承父类Animal的所有public方法
 //        bird1.move();
+    }
+
+    private static void myTestInterface(){
+        //多态
+        UserService service = new ServiceImpl();
+
+        service.logout();
+
     }
 
 }

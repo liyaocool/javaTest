@@ -48,7 +48,23 @@ public class Hotel {
                         return;
                     }
                     rooms[i][j].setUsed(true);
-                    System.out.println("预定成功");
+                    System.out.println(rooms[i][j].getNum() + "房间预定成功");
+                }
+            }
+        }
+    }
+
+    //退订
+    public void checkOut(String num) {
+        for (int i = 0; i < rooms.length ; i++) {
+            for (int j = 0; j < rooms[i].length; j++) {
+                if (rooms[i][j].getNum().equals(num)) {
+                    if(rooms[i][j].isUsed()){
+                        rooms[i][j].setUsed(false);
+                        System.out.println( rooms[i][j].getNum()+"房间已退订.");
+                        return;
+                    }
+                    System.out.println(rooms[i][j].getNum() + "房间未被预订,无需退订");
                 }
             }
         }

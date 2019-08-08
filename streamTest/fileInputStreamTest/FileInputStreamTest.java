@@ -9,8 +9,7 @@ public class FileInputStreamTest {
     public static void main(String[] args) {
         FileInputStream fis = null;
         try {
-//            String filePath = "file.txt";
-            String filePath = "C:\\test\\javaTest\\streamTest\\fileInputStreamTest\\file.txt";
+            String filePath = "text1.txt";
 
             //创建流
             fis = new FileInputStream(filePath);

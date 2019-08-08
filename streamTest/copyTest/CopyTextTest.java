@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
  * 输出流
  */
 
-public class CopyTest {
+public class CopyTextTest {
     private static String msg;
 
     public static void main(String[] args) {

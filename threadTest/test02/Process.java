@@ -1,4 +1,4 @@
-package threadTest;
+package threadTest.test02;
 
 public class Process implements Runnable {
     public void run() {

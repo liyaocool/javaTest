@@ -1,4 +1,4 @@
-package threadTest;
+package threadTest.test02;
 
 /**
  * 多线程编程

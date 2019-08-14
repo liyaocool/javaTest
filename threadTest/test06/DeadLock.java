@@ -1,4 +1,4 @@
-package threadTest;
+package threadTest.test06;
 
 /*
 死锁现象,程序永远不会结束

@@ -28,7 +28,7 @@ public class JdbcTest {
             //3.获取数据库操作对象
             stmt = conn.createStatement();
             //4.SQL语句
-            String sql = "select * from emp;";
+            String sql = "select * from emp";
             //int stmt.executeUpdate(insert/delete/update) 专门增删改语句,返回修改记录数量int
             //ResultSet stmt.executeQuery(select)专门执行select语句,返回查询结果集
             rs = stmt.executeQuery(sql);

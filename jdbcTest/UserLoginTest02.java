@@ -3,7 +3,6 @@ package jdbcTest;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class UserLoginTest02 {
@@ -43,25 +42,15 @@ public class UserLoginTest02 {
         boolean isSuccess = false;
 
         try {
-            //引入配置文件
-            ResourceBundle bundle = ResourceBundle.getBundle("jdbc");
+            conn = DBUtil.getConnection();
 
-            String driver = bundle.getString("driver");
-            String url = bundle.getString("url");
-            String user = bundle.getString("user");
-            String pwd = bundle.getString("password");
-
-            //1.注册驱动
-            Class.forName(driver);
-            //2.链接数据库
-            conn = DriverManager.getConnection(url, user, pwd);
             //3.获取预编译的数据库链接对象
             String sql = "select * from t_user where userName = ? and password = ?";
             //先预编译好sql框架
             ps = conn.prepareStatement(sql);
             //给编译后的sql语句中？占位符赋值，jdbc下标从1开始
-            ps.setString(1,userName);
-            ps.setString(2,password);
+            ps.setString(1, userName);
+            ps.setString(2, password);
             //4.正式执行sql语句
             rs = ps.executeQuery();
             //5.处理结果集，如果查询到数据
@@ -71,28 +60,7 @@ public class UserLoginTest02 {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            //6.释放资源
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            DBUtil.close(conn, ps, rs);
         }
 
         return isSuccess;

@@ -39,3 +39,19 @@ select ename,sal from emp order by sal desc limit 4,6;
 # ...
 # #每页显示pageSize条数据
 # # 第pageNo页: limit (pageNo-1)*pageSize, pageSize;
+
+CREATE TABLE T_USER
+(
+    id       INT AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO T_USER (userName, password)
+VALUES ("张三", "zhangsan");
+
+INSERT INTO T_USER (userName, password)
+VALUES ("李四", "lisi");
+commit;
+select * from T_USER;

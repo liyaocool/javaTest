@@ -12,8 +12,8 @@ import java.util.TimerTask;
 public class RunTest {
     public static void main(String[] args) throws Exception {
         Timer timer = new Timer();
-
-        timer.schedule(new Task(),new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").parse("2019-8-14 15:02:00 000"),5000);
+        Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").parse("2019-10-08 13:19:00 000");
+        timer.schedule(new Task(),date,5000);
 
 
     }
@@ -23,6 +23,8 @@ public class RunTest {
 class Task extends TimerTask {
     @Override
     public void run() {
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(new Date()));
+        String time_str = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(new Date());
+        System.out.println(time_str);
+        System.out.println("执行方法!");
     }
 }

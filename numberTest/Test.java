@@ -12,6 +12,10 @@ import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
+
+        float fff = 5.24f;
+        float result = Math.round(fff);
+        System.out.println(result);
         //加入千分位
         DecimalFormat df1 = new DecimalFormat("###,###");
 

@@ -8,8 +8,7 @@ public class RunTest01 {
         Thread t1 = new Thread(new Processor01());
         t1.start();
         Thread.sleep(5000);
-        t1.interrupt();
-        System.out.println("打断睡眠");
+        t1.interrupt(); //终断睡眠
     }
 }
 

@@ -7,6 +7,6 @@ public class Bird extends Animal {
     private String name;
 
     public Bird(int id, String name) {
-        super(id,name);
+        super(id, name);
     }
 }

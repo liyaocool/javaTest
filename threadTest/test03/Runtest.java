@@ -16,7 +16,7 @@ public class Runtest {
         t2.start();
 
         // Thread.sleep() ==> t1.sleep(),静态方法,和对象无关,阻塞main主线程,不阻塞t1,主程序5秒后输出hello
-        t1.sleep(5000);
+        Thread.sleep(5000);
         System.out.println("hello");
 
     }
@@ -25,7 +25,7 @@ public class Runtest {
 class Process implements Runnable {
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(Thread.currentThread().getName());
+            System.out.println(Thread.currentThread().getName()+"===>"+i);
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e) {

@@ -1,3 +1,5 @@
+package otherTest;
+
 import java.util.Scanner;
 
 /**

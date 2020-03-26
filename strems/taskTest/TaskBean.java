@@ -1,4 +1,4 @@
-package strems;
+package strems.taskTest;
 
 /**
  * @author liyao
@@ -6,8 +6,8 @@ package strems;
  * @date 2020/3/24 16:51
  */
 public class TaskBean {
-    long point;
-    String status;
+    private  long point;
+    private  String status;
 
     public TaskBean(long point, String status) {
         this.point = point;
@@ -28,5 +28,10 @@ public class TaskBean {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "TaskBean: { point:" + this.getPoint() + ", status:" + this.getStatus() + "}";
     }
 }

@@ -13,6 +13,7 @@ public class RunTest01 {
 }
 
 class Processor01 implements Runnable {
+    @Override
     public void run() {
         try {
             System.out.println("该线程准备睡眠100000000");

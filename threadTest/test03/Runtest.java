@@ -5,30 +5,29 @@ package threadTest.test03;
  */
 public class Runtest {
     public static void main(String[] args) throws Exception {
-        Thread t1 = new Thread(new Process());
-
         Thread t2 = new Thread(new Process());
 
-        t1.setPriority(5);
         t2.setPriority(5);
 
-        t1.start();
         t2.start();
 
-        // Thread.sleep() ==> t1.sleep(),静态方法,和对象无关,阻塞main主线程,不阻塞t1,主程序5秒后输出hello
-        Thread.sleep(5000);
-        System.out.println("hello");
+        for (int i = 0; i < 10; i++) {
+        // Thread.sleep() 和对象无关,阻塞main主线程,不阻塞t1,阻塞主程序
+            Thread.sleep(2000);
+            System.out.println("hello main: " + i);
+        }
 
     }
 }
 
 class Process implements Runnable {
+    @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(Thread.currentThread().getName()+"===>"+i);
+            System.out.println(Thread.currentThread().getName() + "===>" + i);
             try {
                 Thread.sleep(1000);
-            }catch (InterruptedException e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

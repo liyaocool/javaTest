@@ -21,7 +21,11 @@ public class RunTest {
         TaskBean t4 = new TaskBean(2, "222");
         TaskBean t5 = new TaskBean(3, "333");
         List<TaskBean> taskBeans = Arrays.asList(t1, t2, t3, t4, t5);
-        System.out.println(t1.equals(t2));
+        System.out.println("equls: " + t1.equals(t2));
+
+        System.out.println("====原始集合======");
+        System.out.println(taskBeans);
+
         System.out.println("========选出分数为1的，去除重复的，按照状态倒序的，前三个，归集为List========");
         List<TaskBean> tasks = taskBeans.stream()
                 .filter(t -> t.getPoint() == 1)
@@ -31,7 +35,8 @@ public class RunTest {
                 .collect(Collectors.toList());
 
         System.out.println(tasks);
-        System.out.println("================");
+
+        System.out.println("========筛选出状态为222的，重新设置状态为999，归集为List========");
 //        List<TaskBean> newTasks = taskBeans.stream()
 //                .filter(t -> "222".equals(t.getStatus()))
 //                .map(t -> {
@@ -44,8 +49,16 @@ public class RunTest {
                 .filter(t -> "222".equals(t.getStatus()))
                 .peek(t -> t.setStatus("999"))
                 .collect(Collectors.toList());
-        for (TaskBean taskBean : newTasks) {
-            System.out.println(taskBean.toString());
-        }
+        System.out.println(newTasks);
+
+        System.out.println("=====是否能找到分数为6的====");
+        boolean isHasPoint_6 = taskBeans.stream()
+                .anyMatch(taskBean -> taskBean.getPoint() == 6);
+        System.out.println("结果：" + isHasPoint_6);
+
+        System.out.println("=====是否所有的任务分数都为1====");
+        boolean allPointIs_1 = taskBeans.stream()
+                .allMatch(taskBean -> taskBean.getPoint() == 1);
+        System.out.println("结果：" + allPointIs_1);
     }
 }
